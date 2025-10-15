@@ -1,0 +1,7 @@
+# HelloWorld/bin/Debug/net8.0/HelloWorld.deps.json
+# HelloWorld/bin/Debug/net8.0/HelloWorld.dll
+# HelloWorld/bin/Debug/net8.0/HelloWorld.exe
+# HelloWorld/bin/Debug/net8.0/HelloWorld.pdb
+# HelloWorld/bin/Debug/net8.0/HelloWorld.runtimeconfig.json
+HelloWorld/bin/**
+HelloWorld/obj/**
