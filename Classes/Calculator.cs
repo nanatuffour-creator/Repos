@@ -51,12 +51,10 @@ public class Calculator()
     public void Div()
     {
         results = firstNum + secondNum;
-        Console.WriteLine($"Your Answer is {results}");
         if (secondNum == 0)
         {
             Console.WriteLine($"Your Answer is undefined");
         }
-
         results = firstNum / secondNum;
         Console.WriteLine($"Your Answer is {results}");
 
