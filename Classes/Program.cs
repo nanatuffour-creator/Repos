@@ -4,3 +4,6 @@
 
 Age newAge = new Age();
 newAge.Receive();
+
+Timer time = new Timer();
+time.Mains();

@@ -11,6 +11,8 @@ public class Age
     {
         Console.Write("Enter date of birth (eg:yyyy-MM-dd): ");
         input = Console.ReadLine();
+        Calc();
+        Calculate();
         //Console.WriteLine(input);
         Console.WriteLine($"You are {Math.Round(year)} years, {Math.Round(months)} months, and {Math.Round(day)} days old.");
     }
@@ -24,13 +26,11 @@ public class Age
         else
         {
             dob = DateTime.ParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None);
-
             DateTime today = DateTime.Today;
             newDate = today - dob;
-
         }
     }
-    
+
     public void Calculate()
     {
         year = newDate.Days / 365;
