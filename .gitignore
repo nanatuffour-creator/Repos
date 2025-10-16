@@ -5,3 +5,5 @@
 # HelloWorld/bin/Debug/net8.0/HelloWorld.runtimeconfig.json
 HelloWorld/bin/**
 HelloWorld/obj/**
+Classes/bin/**
+Classes/obj/**
