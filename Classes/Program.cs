@@ -7,3 +7,6 @@ newAge.Receive();
 
 Timer time = new Timer();
 time.Mains();
+
+Calculator calculate = new Calculator();
+calculate.Mains();
