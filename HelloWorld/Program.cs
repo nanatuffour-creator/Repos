@@ -13,9 +13,7 @@ var par = int.TryParse(s, out int ss);
     if (ss == 1)
     {
         Time();
-        if (Time().time == 0){
-            goto RETURN;
-        }
+        goto RETURN;
     }
     else if (ss == 2)
     {
@@ -28,39 +26,40 @@ var par = int.TryParse(s, out int ss);
         goto RETURN;
     }
 
-RETURN : 
-Console.Write("Do you want to continue the main program(y/n): ");
-    var check = Console.ReadKey();
-    if (check.Key == ConsoleKey.Y) { Console.WriteLine(); goto MAIN; }
-    else if (check.Key == ConsoleKey.N) { Console.WriteLine(); break; }
+RETURN:
+    Console.WriteLine()
+    Console.Write("Do you want to continue the main program(y/n): ");
+    var checks = Console.ReadKey();
+    if (checks.Key == ConsoleKey.Y) { Console.WriteLine(); goto MAIN; }
+    else if (checks.Key == ConsoleKey.N) { Console.WriteLine(); break; }
     else { Console.WriteLine(); Console.WriteLine("INVALID INPUT"); goto RETURN; }
 }
 
 
 //Time Counter.
-
 async void Time()
 {
     Console.WriteLine("Time Counter");
-Console.Write("Enter hours : ");
-var hour = Console.ReadLine();
-var parsed = int.TryParse(hour, out int hours);
-Console.Write("Enter minutes : ");
-var minute = Console.ReadLine();
-parsed = int.TryParse(minute, out int minutes);
-Console.Write("Enter seconds : ");
-var second = Console.ReadLine();
-parsed = int.TryParse(second, out int seconds);
+    Console.Write("Enter hours : ");
+    var hour = Console.ReadLine();
+    var parsed = int.TryParse(hour, out int hours);
+    Console.Write("Enter minutes : ");
+    var minute = Console.ReadLine();
+    parsed = int.TryParse(minute, out int minutes);
+    Console.Write("Enter seconds : ");
+    var second = Console.ReadLine();
+    parsed = int.TryParse(second, out int seconds);
 
-TimeSpan time = new TimeSpan(hours, minutes, seconds);
+    TimeSpan time = new TimeSpan(hours, minutes, seconds);
 
-while (time.TotalSeconds >= 0)
-{
-    Console.Write($"\rTime left : {time:hh\\:mm\\:ss}");
-    time = time.Subtract(TimeSpan.FromSeconds(1));
-    await Task.Delay(1000);
-}
-Console.WriteLine("\nTime up");
+    while (time.TotalSeconds >= 0)
+    {
+        Console.Write($"\rTime left : {time:hh\\:mm\\:ss}");
+        time = time.Subtract(TimeSpan.FromSeconds(1));
+        await Task.Delay(1000);
+    }
+    Console.WriteLine("\nTime up");
+    //return time;
 }
 
 //Calculator
