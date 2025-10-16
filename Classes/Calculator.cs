@@ -20,6 +20,7 @@ public class Calculator()
         Console.Write("Please choose your option : ");
         var select = Console.ReadLine();
         var parses = int.TryParse(select, out selected);
+        Values();
     }
 
     public void Values()
@@ -79,4 +80,21 @@ public class Calculator()
             Subtract();
         }
     }
+
+    dynamic?  check;
+    public void Continue()
+    {
+        while (true)
+        {
+            Console.WriteLine();
+            Console.Write("Do you want to continue to the main program(y/n): ");
+            check = Console.ReadKey();
+            if (check.Key == ConsoleKey.Y) { Console.WriteLine(); Mains(); }
+            else if (check.Key == ConsoleKey.N) { Console.WriteLine(); break; }
+            else { Console.WriteLine(); Console.WriteLine("INVALID INPUT"); Continue(); }
+        }
+    }
+
 }
+
+
