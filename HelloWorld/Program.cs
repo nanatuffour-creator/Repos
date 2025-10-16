@@ -13,20 +13,19 @@ var par = int.TryParse(s, out int ss);
     if (ss == 1)
     {
         Time();
-        goto RETURN;
-
+        if (Time().time == 0){
+            goto RETURN;
+        }
     }
     else if (ss == 2)
     {
         Calculator();
         goto RETURN;
-
     }
     else if (ss == 3)
     {
         Age();
         goto RETURN;
-
     }
 
 RETURN : 
