@@ -93,7 +93,4 @@ public class Calculator()
             else { Console.WriteLine(); Console.WriteLine("INVALID INPUT"); Continue(); }
         }
     }
-
 }
-
-

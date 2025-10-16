@@ -39,9 +39,3 @@ RETURN:
     else if (checks.Key == ConsoleKey.N) { Console.WriteLine(); break; }
     else { Console.WriteLine(); Console.WriteLine("INVALID INPUT"); goto RETURN; }
 }
-
-
-
-
-
-
