@@ -9,6 +9,7 @@ public class Calculator()
     {
         Menu();
         MainImp();
+        Continue();
     }
     public void Menu()
     {
@@ -87,7 +88,7 @@ public class Calculator()
             Console.WriteLine();
             Console.Write("Do you want to continue to the main program(y/n): ");
             check = Console.ReadKey();
-            if (check.Key == ConsoleKey.Y) { Console.WriteLine(); Mains(); }
+            if (check.Key == ConsoleKey.Y) { Console.WriteLine(); Mains(); continue; }
             else if (check.Key == ConsoleKey.N) { Console.WriteLine(); break; }
             else { Console.WriteLine(); Console.WriteLine("INVALID INPUT"); Continue(); }
         }
