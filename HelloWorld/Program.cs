@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
-while(true)
+while (true)
 {
 MAIN :
 Console.WriteLine("1.Time Counter.");
@@ -27,8 +28,8 @@ var par = int.TryParse(s, out int ss);
     }
 
 RETURN:
-    Console.WriteLine()
-    Console.Write("Do you want to continue the main program(y/n): ");
+    Console.WriteLine();
+    Console.Write("Do you want to continue to the main program(y/n): ");
     var checks = Console.ReadKey();
     if (checks.Key == ConsoleKey.Y) { Console.WriteLine(); goto MAIN; }
     else if (checks.Key == ConsoleKey.N) { Console.WriteLine(); break; }
@@ -37,7 +38,7 @@ RETURN:
 
 
 //Time Counter.
-async void Time()
+ void Time()
 {
     Console.WriteLine("Time Counter");
     Console.Write("Enter hours : ");
@@ -56,7 +57,7 @@ async void Time()
     {
         Console.Write($"\rTime left : {time:hh\\:mm\\:ss}");
         time = time.Subtract(TimeSpan.FromSeconds(1));
-        await Task.Delay(1000);
+        Task.Delay(1000).Wait();
     }
     Console.WriteLine("\nTime up");
     //return time;
@@ -133,28 +134,38 @@ BACK:
 
 static void Age()
 {
-    Console.Write("Enter date of birth (eg:yyyy-MM-dd): ");
-string? input = Console.ReadLine();
-//DateTime dob = DateTime.Parse(Console.ReadLine());
-if (input == null || input.Trim() == "")
-{
-    Console.WriteLine("Invalid Input");
-}
-else
-{
-    DateTime dob = DateTime.ParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None);
+    while(true)
+    {
+        Console.Write("Enter date of birth (eg:yyyy-MM-dd): ");
+        string? input = Console.ReadLine();
+        //DateTime dob = DateTime.Parse(Console.ReadLine());
+        if (input == null || input.Trim() == "")
+        {
+            Console.WriteLine("Invalid Input");
+        }
+        else
+        {
+            DateTime dob = DateTime.ParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None);
 
-    DateTime today = DateTime.Today;
-    TimeSpan newDate = today - dob;
+            DateTime today = DateTime.Today;
+            TimeSpan newDate = today - dob;
 
-    decimal year = newDate.Days / 365;
-    decimal month = newDate.Days % 365;
-    decimal months = month / 31;
-    decimal day = months % 31;
+            decimal year = newDate.Days / 365;
+            decimal month = newDate.Days % 365;
+            decimal months = month / 31;
+            decimal day = months % 31;
 
 
-    Console.WriteLine($"You are {Math.Round(year)} years, {Math.Round(months)} months, and {Math.Round(day)} days old.");
-}
+            Console.WriteLine($"You are {Math.Round(year)} years, {Math.Round(months)} months, and {Math.Round(day)} days old.");
+        }
+    
+        BACK:
+            Console.Write("Do you want to continue (y/n): ");
+            var checker = Console.ReadKey();
+            if (checker.Key == ConsoleKey.Y) { Console.WriteLine(); continue; }
+            else if (checker.Key == ConsoleKey.N) { Console.WriteLine(); break; }
+            else { Console.WriteLine(); Console.WriteLine("INVALID INPUT"); goto BACK; }
+    }
 
 
 }
