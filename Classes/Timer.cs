@@ -1,4 +1,4 @@
-public class Timer()
+public class Timer
 {
     int hours;
     int minutes;
