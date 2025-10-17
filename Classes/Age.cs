@@ -3,10 +3,7 @@ using System.Runtime.CompilerServices;
 
 public class Age
 {
-    TimeSpan newDate;
-    DateTime dob;
-    string? input;
-    decimal year;decimal month;decimal months;decimal day;
+    TimeSpan newDate;DateTime dob;string? input;decimal year;decimal month;decimal months;decimal day;
     public void Receive()
     {
         Console.Write("Enter date of birth (eg:yyyy-MM-dd): ");
