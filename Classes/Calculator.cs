@@ -86,7 +86,7 @@ public class Calculator()
         while (true)
         {
             Console.WriteLine();
-            Console.Write("Do you want fffffff to continue to the main program(y/n): ");
+            Console.Write("Do you want continue using the calculator(y/n): ");
             check = Console.ReadKey();
             if (check.Key == ConsoleKey.Y) { Console.WriteLine(); Mains(); continue; }
             else if (check.Key == ConsoleKey.N) { Console.WriteLine(); break; }
